@@ -65,7 +65,7 @@ describe('Issue create', () => {
   });
 
 //Assignment 2: Test 1
-  it("Should create an issue and validate it successfully", () => {
+  it("Should create an high priority issue and validate it successfully", () => {
     //Create a bug ticket
     cy.get('[data-testid="modal:issue-create"]').within(() => {
       cy.get('[data-testid="select:type"]').click();
@@ -101,7 +101,7 @@ describe('Issue create', () => {
   });
 
 //Assignment 2: Test 2
-it("Should create an issue and validate it successfully", () => {
+it("Should create an low priority, random data issue and validate it successfully", () => {
   //Create a bug ticket
   cy.get('[data-testid="modal:issue-create"]').within(() => {
     cy.get('[data-testid="select:type"]').should('contain', 'Task');
