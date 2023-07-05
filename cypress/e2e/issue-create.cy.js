@@ -73,8 +73,8 @@ describe('Issue create', () => {
       cy.wait(1000);
       cy.get('[data-testid="select-option:Bug"]').trigger("click");
       cy.wait(1000);
-      cy.get(".ql-editor").type("fakeDesc");
-      cy.get('input[name="title"]').type("MyBug");
+      cy.get(".ql-editor").type("My bug description");
+      cy.get('input[name="title"]').type("Bug");
       cy.get('[data-testid="select:reporterId"]').click();
       cy.get('[data-testid="select-option:Pickle Rick"]').click();
       cy.get('[data-testid="select:priority"]').click();
@@ -95,7 +95,7 @@ describe('Issue create', () => {
           .should("have.length", "5")
           .first()
           .find("p")
-          .contains("MyBug");
+          .contains("Bug");
         cy.get('[data-testid="icon:bug"]').should("be.visible");
       });
   });
