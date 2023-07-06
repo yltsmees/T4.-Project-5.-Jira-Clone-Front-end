@@ -102,7 +102,7 @@ describe('Issue create', () => {
 
 //Assignment 2: Test 2
 it("Should create an low priority, random data issue and validate it successfully", () => {
-  //Create a bug ticket
+  //Create a task ticket
   cy.get('[data-testid="modal:issue-create"]').within(() => {
     cy.get('[data-testid="select:type"]').should('contain', 'Task');
     cy.get(".ql-editor").type(fakeDesc);
