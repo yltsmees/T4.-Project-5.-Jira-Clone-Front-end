@@ -1,5 +1,3 @@
-import { faker } from "@faker-js/faker";
-
 describe("Delete and cancel an issue", () => {
   beforeEach(() => {
     cy.visit("/");
