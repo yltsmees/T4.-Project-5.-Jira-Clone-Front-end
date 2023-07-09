@@ -9,7 +9,7 @@ describe('Delete and cancel an issue', () => {
   });
 
   const issueTitle = 'This is an issue of type: Task.';
-
+  // Assignment 4:  Create Deletion Tests in POM format
   it('Delete the issue successfully using POM', () => {
     issueDetailModal.clickDeleteButton();
     issueDetailModal.confirmDeletion();
