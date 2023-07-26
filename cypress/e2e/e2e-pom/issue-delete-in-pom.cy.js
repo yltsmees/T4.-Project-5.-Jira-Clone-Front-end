@@ -9,18 +9,23 @@ describe('Delete and cancel an issue', () => {
   });
 
   const issueTitle = 'This is an issue of type: Task.';
+
   // Assignment 4:  Create Deletion Tests in POM format
   it('Delete the issue successfully using POM', () => {
     issueDetailModal.clickDeleteButton();
     issueDetailModal.confirmDeletion();
     issueDetailModal.ensureIssueIsNotVisibleOnBoard(issueTitle);
-    cy.reload();
+    issueDetailModal.validateIssueVisibilityState(issueTitle, false)
+    
+  
   });
 
-  it('Cancel deleting process using POM', () => {
+
+  it.only('Cancel deleting process using POM', () => {
     issueDetailModal.clickDeleteButton();
     issueDetailModal.cancelDeletion();
     issueDetailModal.closeDetailModal();
     issueDetailModal.ensureIssueIsVisibleOnBoard(issueTitle);
+    issueDetailModal.validateIssueVisibilityState(issueTitle, true)
   });
 });

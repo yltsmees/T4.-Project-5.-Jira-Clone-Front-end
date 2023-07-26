@@ -73,7 +73,20 @@ class IssueModal {
         cy.get(this.issueDetailModal).should('not.exist');
         cy.reload();
         cy.contains(issueTitle).should('be.visible');
+
+
+        { cy.get(this.issueDetailModal).should('not.exist');
+        cy.reload();
+        cy.contains(issueTitle).should('be.visible'); }
     }
+
+    validateIssueVisibilityState(issueTitle, isVisible = true){
+        cy.get(this.issueDetailModal).should('not.exist');
+        cy.reload();
+        if (isVisible) cy.contains(issueTitle).should('be.visible');
+        if(!isVisible) cy.contains(issueTitle).should('not.exist');
+    }
+
 
     ensureIssueIsNotVisibleOnBoard(issueTitle){
         cy.get(this.issueDetailModal).should('not.exist');
